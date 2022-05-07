@@ -44,7 +44,7 @@ const NavBar = () => {
                                     :
                                     <>  
                                     <Link href={'/admin/dashboard'}>
-                                        <button className=" text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Dashboard</button>
+                                        <button className=" text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">Dashboard</button>
                                     </Link>
                                     <Link href={'/admin/users'}>
                                         <button className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Users</button>
