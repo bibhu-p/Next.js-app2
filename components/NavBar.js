@@ -14,7 +14,7 @@ const NavBar = () => {
     }
 
     useEffect(() => {
-        const userType = JSON.parse(localStorage.getItem('userType'));
+        const userType = localStorage.getItem('userType');
         setLoginType(userType)
     }, [])
 

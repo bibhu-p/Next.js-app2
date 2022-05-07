@@ -3,11 +3,14 @@ import { BiEditAlt } from "react-icons/bi";
 import { RiDeleteBinLine } from "react-icons/ri";
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import Modal from '../../components/Modal';
 
 const Users = () => {
 
     const [userData, setUserData] = useState([]);
     const [action, setAction] = useState('add');
+    const [showModal, setShowModal] = useState(false);
+    const [userInfo, setUserInfo] = useState({});
 
 
     const getData =()=>{
@@ -26,9 +29,15 @@ const Users = () => {
         getData()
       },[])
 
-      const viewData = (userID)=>{
+      const addUser = ()=>{
+        setAction('add')
+        setShowModal(true)
+      }
+
+      const viewData = (index)=>{
+        setUserInfo(userData[index])
         setAction('edit')
-        // setAllModalVisible(true)
+        setShowModal(true)
       }
 
       const onDelete = (userId)=>{
@@ -46,7 +55,7 @@ const Users = () => {
     return (
         <div className="flex flex-col items-center ">
             <div className=" mt-6 w-full flex justify-end ">
-                <button className="mr-16 bg-gray-800 w-[4rem] h-10 text-white rounded-md hover:bg-gray-600 flex justify-center items-center font-semibold transition ease-in-out hover:duration-300"><FiUserPlus size={25} /></button>
+                <button onClick={()=>addUser()} className="mr-16 bg-gray-800 w-[4rem] h-10 text-white rounded-md hover:bg-gray-600 flex justify-center items-center font-semibold transition ease-in-out hover:duration-300"><FiUserPlus size={25} /></button>
             </div>
 
             <div className="w-[90%] rounded-md">
@@ -70,17 +79,18 @@ const Users = () => {
                         <div className="col-span">{data.phone}</div>
                         <div className="col-span">{data.adhaar}</div>
                         <div className="col-span">{data.address}</div>
-                        <div className="col-span"><button onClick={() => viewData(data._id)}><BiEditAlt size={20} /></button> <button className=" mx-2.5" onClick={() => onDelete(data._id)}><RiDeleteBinLine size={20} /></button></div>
+                        <div className="col-span"><button onClick={() => viewData(i)}><BiEditAlt size={20} /></button> <button className=" mx-2.5" onClick={() => onDelete(data._id)}><RiDeleteBinLine size={20} /></button></div>
                     </div>
                 )}
             </div>
 
             {/* Modal  */}
-            {/* {showModal ? <AllModal
+            {showModal ? <Modal
                 setShowModal={setShowModal}
                 getData={getData}
                 action={action}
-            /> : null} */}
+                userInfo = {userInfo}
+            /> : null}
         </div>
     );
 }

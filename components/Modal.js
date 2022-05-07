@@ -77,7 +77,7 @@ const Modal = (props) => {
             setRegFormErr({ ...regFormErr, address: true })
             return;
         }
-        console.log(regFormValues);
+        // console.log(regFormValues);
 
         switch (props.action) {
             case 'add': {
