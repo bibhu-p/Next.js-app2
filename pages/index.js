@@ -20,8 +20,8 @@ const Home = () => {
   });
 
   const classes = {
-    valid: "flex pl-3 items-center transition ease-in-out focus:duration-300 border-0  text-[0.9rem] rounded  w-full h-9 outline-0 focus:ring-gray-800 ring-1 ring-gray-800",
-    inValid: "flex pl-3 items-center transition ease-in-out focus:duration-300 border-0  text-[0.9rem] rounded outline-0 w-full h-9 ring-1 ring-red-400 focus:ring-red-400 focus:ring-1"
+    valid: "flex pl-3 items-center transition ease-in-out focus:duration-300 border-0  text-[0.9rem] rounded  md:mx-8  w-full md:w-[85%] h-9 outline-0 focus:ring-gray-800 ring-1 ring-gray-800",
+    inValid: "flex pl-3 items-center transition ease-in-out focus:duration-300 border-0  text-[0.9rem] rounded outline-0 md:mx-8  w-full md:w-[85%] h-9 ring-1 ring-red-400 focus:ring-red-400 focus:ring-1"
   }
 
 
@@ -85,14 +85,14 @@ const Home = () => {
 
 
   return (
-    <div className='flex flex-col sm:flex-row  justify-center items-center  h-[100vh] w-[100vw] bg-[#ffffff]'>
+    <div className='flex flex-col md:flex-row  justify-center items-center  h-[100vh] w-[100vw] bg-[#ffffff]'>
       {/* Logo */}
-      <div className="flex justify-center items-center w-3/12  sm:border-r-2 border-r-slate-800">
-        <img className=' w-full h-[70%]' src="https://i.pinimg.com/736x/cb/54/a9/cb54a9d5a7815b1536185bab2c9fe5e7.jpg" alt="" />
+      <div className="flex justify-center items-center w-[30%] h-[25%] md:w-1/4 md:h-1/2 md:border-r-2 border-r-slate-800">
+        <img className=' w-full md:h-full h-full md:w-full' src="https://i.pinimg.com/736x/cb/54/a9/cb54a9d5a7815b1536185bab2c9fe5e7.jpg" alt="" />
       </div>
 
       {/* Login Form */}
-      <div className="sm:mt-16 w-[30vw] h-[60%] sm:bg-white mx-3">
+      <div className=" -mt-5 md:mt-16 w-auto md:w-auto h-[60%] sm:bg-white mx-3">
         <div className=' flex justify-center items-center sm:h-18 rounded-xl sm:bg-white '>
           <span className=' text-3xl '> Login </span>
         </div>
